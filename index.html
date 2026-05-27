@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexora International School</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #111827;
+        }
+
+        .navbar-brand {
+            letter-spacing: -1px;
+        }
+
+        .hero-section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .hero-badge {
+            background: #eff6ff;
+            color: #2563eb;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .hero-title {
+            font-size: 64px;
+            line-height: 1.1;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .hero-title span {
+            color: #2563eb;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            color: #6b7280;
+            line-height: 1.8;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px 10px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card h4 {
+            font-weight: 800;
+            color: #2563eb;
+        }
+
+        .stat-card p {
+            margin: 0;
+            color: #6b7280;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .floating-card {
+            position: absolute;
+            bottom: 30px;
+            left: -20px;
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 250px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .section-text {
+            color: #6b7280;
+            font-size: 17px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 30px;
+            transition: 0.3s;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 40px;
+            color: #2563eb;
+        }
+
+        .feature-card h5 {
+            margin-top: 20px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            margin-top: 15px;
+            color: #6b7280;
+        }
+
+        .small-title {
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .mini-feature {
+            background: #f8fafc;
+            padding: 14px 18px;
+            border-radius: 14px;
+            font-weight: 600;
+        }
+
+        .mini-feature i {
+            color: #2563eb;
+            margin-right: 8px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .program-card img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .program-card h5 {
+            font-weight: 700;
+        }
+
+        .program-card p {
+            color: #6b7280;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 35px;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            padding: 80px 30px;
+            border-radius: 40px;
+        }
+
+        .footer-section {
+            background: #0f172a;
+        }
+
+        .footer-title {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-text,
+        .footer-links li,
+        .footer-copy {
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #94a3b8;
+        }
+
+        .footer-line {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        @media(max-width: 991px) {
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .section-title {
+                font-size: 34px;
+            }
+
+            .floating-card {
+                position: static;
+                margin-top: 20px;
+            }
+        }
+
+        @media(max-width: 576px) {
+
+            .hero-title {
+                font-size: 38px;
+            }
+
+            .hero-section {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 text-primary" href="#">
+                Nexora
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto gap-lg-4">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+
+                <a href="#" class="btn btn-primary px-4 rounded-pill">
+                    Admission Open
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero-section py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+                    <span class="hero-badge">
+                        Modern Education Platform
+                    </span>
+
+                    <h1 class="hero-title mt-4">
+                        Empowering <span>Future Leaders</span> Through Education
+                    </h1>
+
+                    <p class="hero-text mt-4">
+                        A premium learning environment designed for creativity,
+                        innovation, academic excellence, and student growth.
+                    </p>
+
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="#" class="btn btn-primary btn-lg rounded-pill px-4">
+                            Explore School
+                        </a>
+
+                        <a href="#" class="btn btn-outline-dark btn-lg rounded-pill px-4">
+                            Watch Video
+                        </a>
+                    </div>
+
+                    <div class="row mt-5 g-3">
+                        <div class="col-6 col-md-3">
+                            <div class="stat-card text-center">
+                                <h4>12K+</h4>
+                                <p>Students</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <div class="stat-card text-center">
+                                <h4>250+</h4>
+                                <p>Teachers</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <div class="stat-card text-center">
+                                <h4>18+</h4>
+                                <p>Years</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6 col-md-3">
+                            <div class="stat-card text-center">
+                                <h4>10+</h4>
+                                <p>Campuses</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="hero-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop"
+                            class="img-fluid rounded-5 hero-image" alt="School">
+
+                        <div class="floating-card">
+                            <h5>Smart Classrooms</h5>
+                            <p>Technology-enabled modern learning.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FEATURES -->
+    <section class="py-5 bg-light">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2 class="section-title">Why Choose Nexora?</h2>
+                <p class="section-text">Premium education with modern learning systems.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <i class="bi bi-mortarboard"></i>
+                        <h5>Expert Faculty</h5>
+                        <p>Highly experienced educators focused on student success.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <i class="bi bi-laptop"></i>
+                        <h5>Smart Learning</h5>
+                        <p>Interactive classrooms with advanced digital tools.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <i class="bi bi-globe"></i>
+                        <h5>Global Programs</h5>
+                        <p>International exposure and career-focused learning.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <i class="bi bi-trophy"></i>
+                        <h5>Sports Excellence</h5>
+                        <p>Modern sports infrastructure and student activities.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop"
+                        class="img-fluid rounded-5 shadow" alt="Students">
+                </div>
+
+                <div class="col-lg-6">
+                    <span class="small-title">ABOUT OUR SCHOOL</span>
+
+                    <h2 class="section-title mt-3">
+                        Shaping Minds. Building Futures.
+                    </h2>
+
+                    <p class="section-text mt-4">
+                        At Nexora International School, we focus on academic excellence,
+                        innovation, leadership development, and holistic student growth.
+                    </p>
+
+                    <div class="row mt-4 g-3">
+                        <div class="col-md-6">
+                            <div class="mini-feature">
+                                <i class="bi bi-check-circle-fill"></i>
+                                Modern Curriculum
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mini-feature">
+                                <i class="bi bi-check-circle-fill"></i>
+                                Safe Environment
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mini-feature">
+                                <i class="bi bi-check-circle-fill"></i>
+                                Global Exposure
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mini-feature">
+                                <i class="bi bi-check-circle-fill"></i>
+                                Career Guidance
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn btn-primary rounded-pill px-4 mt-4">
+                        Learn More
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PROGRAMS -->
+    <section class="py-5 bg-light" id="programs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3">
+                <div>
+                    <h2 class="section-title">Academic Programs</h2>
+                    <p class="section-text">Explore our modern educational programs.</p>
+                </div>
+
+                <a href="#" class="btn btn-outline-primary rounded-pill px-4">
+                    View All
+                </a>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?q=80&w=1200&auto=format&fit=crop"
+                            class="img-fluid" alt="Program">
+
+                        <div class="p-4">
+                            <h5>Science & Technology</h5>
+                            <p>Innovation-driven curriculum for future creators.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop"
+                            class="img-fluid" alt="Program">
+
+                        <div class="p-4">
+                            <h5>Commerce</h5>
+                            <p>Business, finance, and entrepreneurship education.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+                            class="img-fluid" alt="Program">
+
+                        <div class="p-4">
+                            <h5>Arts & Design</h5>
+                            <p>Creativity-focused modern artistic education.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card">
+                        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1200&auto=format&fit=crop"
+                            class="img-fluid" alt="Program">
+
+                        <div class="p-4">
+                            <h5>Sports Education</h5>
+                            <p>Physical development with modern sports facilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TESTIMONIALS -->
+    <section class="py-5" id="testimonials">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2 class="section-title">Trusted By Parents & Students</h2>
+                <p class="section-text">Real experiences from our school community.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>
+                            “The teachers are highly supportive and the environment is perfect for learning.”
+                        </p>
+
+                        <div class="d-flex align-items-center gap-3 mt-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testimonial-img"
+                                alt="User">
+
+                            <div>
+                                <h6 class="mb-0">Riya Sharma</h6>
+                                <small>Parent</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>
+                            “Nexora helped me improve confidence, creativity, and academic performance.”
+                        </p>
+
+                        <div class="d-flex align-items-center gap-3 mt-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-img"
+                                alt="User">
+
+                            <div>
+                                <h6 class="mb-0">Arvin Mehta</h6>
+                                <small>Student</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p>
+                            “The school provides the perfect balance between academics and extracurriculars.”
+                        </p>
+
+                        <div class="d-flex align-items-center gap-3 mt-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="testimonial-img"
+                                alt="User">
+
+                            <div>
+                                <h6 class="mb-0">Neha Verma</h6>
+                                <small>Parent</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ -->
+    <section class="py-5 bg-light">
+        <div class="container">
+
+            <div class="text-center mb-5">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="accordion" id="faqAccordion">
+
+                <div class="accordion-item mb-3 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            What curriculum do you follow?
+                        </button>
+                    </h2>
+
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We follow a modern curriculum focused on innovation, creativity, and academics.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item mb-3 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+                            Are transport facilities available?
+                        </button>
+                    </h2>
+
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes, safe and reliable transport services are available across the city.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="cta-box text-center text-white">
+                <h2>Admissions Open For 2026</h2>
+                <p class="mt-3">
+                    Join a premium educational experience built for future leaders.
+                </p>
+
+                <a href="#" class="btn btn-light rounded-pill px-5 mt-3">
+                    Apply Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer-section pt-5 pb-4" id="contact">
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-4">
+                    <h3 class="text-white fw-bold">Nexora</h3>
+
+                    <p class="footer-text mt-3">
+                        Empowering future leaders through innovation, quality education,
+                        and modern learning systems.
+                    </p>
+                </div>
+
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Quick Links</h5>
+
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li><a href="#">Admissions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Contact</h5>
+
+                    <ul class="footer-links">
+                        <li>123 Education Street</li>
+                        <li>+91 98765 43210</li>
+                        <li>info@nexora.edu</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3">
+                    <h5 class="footer-title">Newsletter</h5>
+
+                    <form class="mt-3 d-flex">
+                        <input type="email" class="form-control rounded-start-pill" placeholder="Enter Email">
+
+                        <button class="btn btn-primary rounded-end-pill px-4">
+                            Join
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <hr class="footer-line my-4">
+
+            <div class="text-center footer-copy">
+                © 2026 Nexora International School. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // NAVBAR SHADOW ON SCROLL
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow');
+            } else {
+                navbar.classList.remove('shadow');
+            }
+        });
+
+        // SMOOTH SCROLL
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // FADE ANIMATION
+        const fadeElements = document.querySelectorAll(
+            '.feature-card, .program-card, .testimonial-card'
+        );
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show-animation');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        fadeElements.forEach(el => {
+            el.classList.add('hidden-animation');
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>
